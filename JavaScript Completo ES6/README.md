@@ -19,7 +19,7 @@ var precoTotal = preco * totalComprado;
 ```
 
 <h4>Sintaxe</h4>
-Palavra chave var seguida do nome, sinal de igual e o valor.
+Palavra chave `var` seguida do nome, sinal de igual e o valor.
 
 ```
 var nome = 'Gabriel';
