@@ -164,7 +164,7 @@ Você deve passar expressões / variáveis dentro de `${}`
 
 <h1><a href="https://github.com/gabr1ellima/origamid-cursos/tree/main/JavaScript%20Completo%20ES6/javascript-para-iniciantes/3-numeros-e-operadores">Números e Operadores</a></h1>
 
-<h4>Números</h4>
+<h2>Números</h2>
 
 ```
 var idade = 21;
@@ -176,7 +176,7 @@ var exp = 2e10; // 20000000000
 Precisão de até 15 dígitos
 
 
-<h4>Operadores Aritméticos</h4>
+<h2>Operadores Aritméticos</h2>
 
 ```
 var soma = 100 + 50; // 150
@@ -189,7 +189,7 @@ var modulo = 14 % 5; // 4
 
 Lembrado que soma `+` em Strings serve para concatenar
 
-<h4>Operadores Aritméticos (Strings)</h4>
+<h2>Operadores Aritméticos (Strings)</h2>
 
 ```
 var soma = '100' + 50; // 10050
@@ -200,7 +200,7 @@ var divisao = 'Comprei 10' / 2; // NaN (Not a Number)
 
 É possível verificar se uma variável é NaN ou não com a função `isNaN()`
 
-<h4>NaN = Not a Number</h4>
+<h2>NaN = Not a Number</h2>
 
 ```
 var numero = 80;
@@ -209,7 +209,7 @@ var peso = numero + unidade; // '80kg'
 var pesoPorDois = peso / 2 // NaN (Not a Number)
 ```
 
-<h4>A ordem importa</h4>
+<h2>A ordem importa</h2>
 
 Começa por multiplicação e divisão, depois soma e subtração.
 
@@ -222,7 +222,7 @@ var total4 = 10 + 10 * 2 + 20 / 2; // 40
 
 Parênteses para priorizar uma expressão
 
-<h4>Operadores Aritméticos Unários</h4>
+<h2>Operadores Aritméticos Unários</h2>
 
 ```
 var incremento = 5;
