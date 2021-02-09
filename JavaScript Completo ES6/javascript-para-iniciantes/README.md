@@ -1,4 +1,4 @@
-<h1><a href="https://github.com/gabr1ellima/origamid-cursos/tree/main/JavaScript%20Completo%20ES6/javascript-para-iniciantes/variaveis">Variáveis</a></h1>
+<h1><a href="https://github.com/gabr1ellima/origamid-cursos/tree/main/JavaScript%20Completo%20ES6/javascript-para-iniciantes/1-variaveis">Variáveis</a></h1>
 
 Responsáveis por guardar dados na memória.
 Inicia com a palavra `var`, `let` ou `const`
@@ -97,7 +97,7 @@ possuiFaculdade = false;
 ```
 <hr>
 
-<h1><a href="https://github.com/gabr1ellima/origamid-cursos/tree/main/JavaScript%20Completo%20ES6/javascript-para-iniciantes/tipos-de-dados">Tipos de Dados</a></h1>
+<h1><a href="https://github.com/gabr1ellima/origamid-cursos/tree/main/JavaScript%20Completo%20ES6/javascript-para-iniciantes/2-tipos-de-dados">Tipos de Dados</a></h1>
 
 Todos são primitivos exceto os objetos.
 
@@ -158,4 +158,99 @@ var gols = 1000;
 var frase1 = 'Romário fez ' + gols + 'gols';
 var frase2 = `Romário fez ${gols} gols`; // Utilizando Template String
 ```
-Você deve passar expressões / variáveis dentro de ${}
+Você deve passar expressões / variáveis dentro de `${}`
+
+<hr>
+
+<h1><a href="https://github.com/gabr1ellima/origamid-cursos/tree/main/JavaScript%20Completo%20ES6/javascript-para-iniciantes/3-numeros-e-operadores">Números e Operadores</a></h1>
+
+<h4>Números</h4>
+
+```
+var idade = 21;
+var gols = 1000;
+var pi = 3.14; // Ponto para decimal
+var exp = 2e10; // 20000000000
+```
+
+Precisão de até 15 dígitos
+
+
+<h4>Operadores Aritméticos</h4>
+
+```
+var soma = 100 + 50; // 150
+var subtracao = 100 - 50; // 50
+var multiplicacao = 100 * 2; // 200
+var divisão = 100 / 2; // 50
+var expoente = 2 ** 4; // 16
+var modulo = 14 % 5; // 4
+```
+
+Lembrado que soma `+` em Strings serve para concatenar
+
+<h4>Operadores Aritméticos (Strings)</h4>
+
+```
+var soma = '100' + 50; // 10050
+var subtracao = '100' - 50; // 50
+var multiplicacao = '100' * '2'; // 200
+var divisao = 'Comprei 10' / 2; // NaN (Not a Number)
+```
+
+É possível verificar se uma variável é NaN ou não com a função `isNaN()`
+
+<h4>NaN = Not a Number</h4>
+
+```
+var numero = 80;
+var unidade = 'kg';
+var peso = numero + unidade; // '80kg'
+var pesoPorDois = peso / 2 // NaN (Not a Number)
+```
+
+<h4>A ordem importa</h4>
+
+Começa por multiplicação e divisão, depois soma e subtração.
+
+```
+var total1 = 20 + 5 * 2; // 30
+var total2 = (20 + 5) * 2; // 50
+var total3 = 20 / 2 * 5; // 50
+var total4 = 10 + 10 * 2 + 20 / 2; // 40
+```
+
+Parênteses para priorizar uma expressão
+
+<h4>Operadores Aritméticos Unários</h4>
+
+```
+var incremento = 5;
+console.log(incremento++); // 5
+console.log(incremento); // 6
+
+var incremento2 = 5;
+console.log(++incremento2); // 6
+console.log(incremento2); // 6
+```
+
+Mesma coisa para o decremento `--x`
+
+O `+` e `-` tenta transformar o valor seguinte em número
+
+```
+var frase = 'Isso é um teste';
++frase; // NaN
+-frase; // NaN
+
+var idade = '28';
++idade; // 28 (número)
+-idade; // -28 (número)
+console.log(+idade + 5); // 33
+
+var possuiFaculdade = true;
+console.log(+possuiFaculdade); // 1
+```
+O `-` antes de um número torna ele negativo
+
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/Javascript/Guide/Expressions_and_Operators">Guia Completo de Operadores</a>
