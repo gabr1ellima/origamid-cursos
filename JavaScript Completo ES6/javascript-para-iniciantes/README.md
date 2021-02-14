@@ -420,3 +420,164 @@ switch (corFavorita) {
         console.log('Feche os olhos.');
 }
 ```
+<hr>
+
+<h1>Funções</h1>
+
+Bloco de código que pode ser executado e reutilizado. Valores podem ser passados por uma função e a mesma retorna outro valor.
+
+```
+fuction areaQuadrado(lado) {
+    return lado * lado;
+}
+
+areaQuadrado(4) // 16
+areaQuadrado(5) // 25
+areaQuadrado(2) // 4
+```
+
+Chamada de function declaration
+
+```
+function pi() { // você pode executar uma função e já executar ela
+    return 3.14; // o valor que está aqui já vai ser retornado
+}
+
+var total = 5 * pi(); // 15.7
+
+console.log(total);
+console.log(pi());
+console.log(pi); // essa função não está sendo executada e sim sendo retornada direto
+```
+
+Parênteses `()` executam uma função
+
+<h2>Parâmetros e Argumentos</h2>
+
+Ao `criar` uma função, você pode definir `parâmetros`.
+Ao `executar` uma função, você pode passar `argumentos`. 
+
+```
+// peso e altura são parâmetros
+function imc(peso, altura) {
+    const imc = peso / (altura ** 2);
+    return imc
+}
+
+imc(80, 1.80) // 80 e 1.80 são os argumentos
+imc(80, 1.70) // 80 e 1.70 são os argumentos
+```
+
+Separar por vírgula cada parâmetro. Você pode definir mais de um parâmetro ou nenhum também
+
+<h2>Parênteses executa a função</h2>
+
+```
+fuction corFavorita(cor) {
+    if( cor === 'azul' ) {
+        return 'Você gosta do céu';
+    } else if(cor === 'verde') {
+        return 'Você gosta de árvores';
+    } else {
+        return 'Você não gosta de nada';
+    }
+}
+
+corFavorita(); // retorna 'Você não gosta de nada'
+```
+
+Se apenas definirmos a função com o function e não executarmos a mesma, nada que estiver dentro dela irá acontecer
+
+<h2>Argumentos podem ser funções</h2>
+
+Chamadas de Callback, geralmente são funções que ocorrem após algum evento.
+
+```
+addEventListener('click', fuction() {
+    console.log('Clicou');
+});
+// A função possui dois argumentos
+// Primeiro é a string 'click'
+// Segundo é uma função anônima
+```
+
+Funções anônimas são aquelas em que o nome da função não é definido, escritas como `fuction() {}` ou `() => {}` 
+
+<h2>Pode ou não retornar um valor</h2>
+
+Quando não definimos o return, ela irá retornar `undefined`. O código interno da função é executado normalmente, independente de existir valor de return ou não.
+
+```
+function imc(peso, altura) {
+    const imc = peso / (altura ** 2);
+    console.log(imc)
+}
+
+imc(80, 1.80); // retorna o imc
+console.log(imc(80, 1.80)); // retorna o imc e undefined
+```
+
+<h2>Valores retornados</h2>
+
+Uma função pode retornar qualquer tipo de dado e até outras funções
+
+```
+function terceiraIdade(idade) {
+    if(typeof idade !== 'number') {
+        return 'Informe a sua idade!';
+    } else if( idade >= 60 ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+Cuidado, retornar diferentes tipos de dados na mesma função não é uma boa ideia.
+
+<h2>Escopo</h2>
+
+Variáveis e funções definidas dentro de um block `{}`, não são visíveis fora dele, ou seja, são variáveis locais
+
+```
+function precisoVisitar(paisesVisitados) {
+    var totalPaises = 193
+return `Ainda faltam ${totalPaines - paisesVisitados} países`
+}
+console.log(totalPaises); // erro, totalPaises não definido
+```
+
+<h2>Escopo Léxico</h2>
+
+Funções conseguem acessar variáveis que foram criadas no contexto `pai`, ou seja, ela é uma variável global que pode ser acessada por qualquer um
+
+```
+var profissao = 'Designer';
+
+function dados() {
+    var nome = 'Gabriel';
+    var idade = 21;
+    function outrosDados() {
+        var endereco = 'Rio de Janeiro';
+        var idade = 22;
+        return `${nome}, ${idade}, ${endereco}, ${profissao}`;
+    }
+    return outros dados();
+}
+
+dados(); // Retorna 'Gabriel, 22, Rio de Janeiro, Designer'
+outrosDados(); // Retorna um erro 
+```
+ 
+<h2>Hoisting</h2>
+
+Antes de executar uma função, o JS 'move' todas as funções declaradas para a memória
+
+```
+imc(80, 1.80); // imc aparece no console
+
+function imc(peso, altura) {
+    const imc = peso / (altura ** 2);
+    console.log(imc);
+}
+```
