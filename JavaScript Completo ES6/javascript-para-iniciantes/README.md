@@ -798,3 +798,104 @@ Praticamente todos os efeitos com JS são feitos utilizando propriedades e méto
 
 
 <h4>Web API's são métodos e propriedades que permitem a interação JavaScript e Browser.</h4>
+
+<h1>Arrays e Loops</h1>
+
+É um grupo de valores geralmente relacionados. Servem para guardarmos diferentes valores em uma única variável.
+
+```
+var videoGames = ['Switch', 'PS4', 'XBOX'];
+
+videoGames[0] // Switch
+videoGames[2] // XBOX
+```
+
+Acesse um elemento da array utilizando `[n]` 
+
+<h4>Métodos e Propriedades de uma Array</h4>
+
+```
+var videoGames = ['Switch', 'PS4', 'XBOX'];
+
+videoGames.pop(); // Remove o último item e retorna ele
+videoGames.push('3DS'); // Adiciona ao final da array
+videoGames.length; // 3
+```
+
+Existem diversos outros métodos, como `map`, `reduce`, `forEach` 
+
+<h4>For Loop</h4>
+
+Fazem algo repetidamente até que uma condição seja atingida.
+
+```
+for (var numero = 0; numero < 10; numero++) {
+    console.log(numero);
+}
+// Retorna de 0 a 9 no console
+```
+
+O for loop possui 3 partes, `início`, `condição` e `incremento` 
+
+<h4>While Loop</h4>
+
+```
+var i = 0;
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+// Retorna de 0 a 9 no console
+```
+
+O for loop é o mais comum
+
+<h4>Arrays e Loops</h4>
+
+```
+var videoGames = ['Switch', 'PS4', 'XBOX', '3DS'];
+for (var i = 0; i < videoGames.length; i++) {
+    console.log(videoGames[i]);
+}
+```
+
+<h4>Break</h4>
+
+O loop irá parar caso encontre a palavra `break` 
+
+```
+var videoGames = ['Switch', 'PS4', 'XBOX', '3DS'];
+for (var i = 0; i < videoGames.length; i++) {
+    console.log(videoGames[i]);
+    if(videoGames[i] === 'PS4') {
+        break;
+    }
+}
+```
+
+<h4>forEach</h4>
+
+forEach é um método que executa uma função para cada item da Array. É uma forma mais simples de utilizarmos um loop com arrays (ou array-like)
+
+```
+var videoGames = ['Switch', 'PS4', 'XBOX', '3DS'];
+videoGames.foreach(function(item) {
+    console.log(item);
+});
+// O argumento item será atribuido dinamicamente
+```
+
+Podemos passar os seguintes parâmetros `item`,  `index` e `array` 
+
+<h4>Não se confunda com a sintaxe</h4>
+
+```
+var numero = 0;
+var maximo = 50;
+for(;numero < maximo;) {
+    console.log(numero);
+    numero++;
+}
+```
+
+Não é recomendado escrever da forma acima, mas funciona normalmente.
