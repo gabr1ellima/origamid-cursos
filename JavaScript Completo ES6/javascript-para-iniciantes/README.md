@@ -734,3 +734,67 @@ menu.hasOwnProperty('height') // false
 ```
 
 hasOwnProperty é um método de Object
+
+<hr>
+
+<h1>Tudo é Objeto</h1>
+
+Strings, Números, Boolean, Obejtos e mais, possuem propriedades e métodos. Por isso são objetos.
+
+```
+var nome = 'Gabriel';
+
+nome.length; // 5
+nome.charAt(1); // 'a'
+nome.replace('el', 'ell'); // 'Gabriell'
+nome; // 'Gabriel'
+```
+
+Uma string herda propriedades e métodos do construtor `String()` 
+
+<h4>Números</h4>
+
+```
+var altura = 1.8;
+
+altura.toString(); // '1.8'
+altura.toFixed(); // '2'
+```
+
+Por um breve momento o número é envolvido em um Objeto (coerção), tendo aceso assim as suas propriedades e métodos
+
+<h4>Funções</h4>
+
+```
+function areaQuadrado(lado) {
+    return lado * lado;
+}
+
+areaQuadrado.toString();
+//"function areaQuadrado(lado) {
+// return lado * lado;
+//}"
+
+areaQuadrado.length; // 1
+```
+
+<h4>Elementos do DOM</h4>
+
+```
+<a class="btn">Clique</a>
+```
+
+```
+var btn = document.querySelector('.btn');
+
+btn.classList.add('azul') // adiciona a classe azul
+btn.innerText; // 'Clique'
+btn.addEventListener('click', function() {
+    console.log('Clicou')
+})
+```
+
+Praticamente todos os efeitos com JS são feitos utilizando propriedades e métodos de objetos do DOM.
+
+
+<h4>Web API's são métodos e propriedades que permitem a interação JavaScript e Browser.</h4>
