@@ -899,3 +899,176 @@ for(;numero < maximo;) {
 ```
 
 Não é recomendado escrever da forma acima, mas funciona normalmente.
+
+<h1>Atribuição e Ternário</h1>
+
+<h4>Operadores de Atribuição</h4>
+
+Podem funcionar como formas abreviadas
+
+```
+var x = 5;
+var y = 10;
+x += y; // x = x + y (15)
+x -= y; // x = x - y (-5)
+x *= y; // x = x * y (50)
+x /= y; // x = x / y (0.5)
+x %= y; // x = x % y (0)
+x **= y; // x = x ** y (9765625)
+```
+
+<h4>Operador Ternário</h4>
+
+Abreviação de condicionais com `if` e `else`
+
+```
+var idade = 19;
+var podeBeber = (idade >= 18) ? 'Pode beber' : 'Não pode beber';
+console.log(podeBeber) // Pode beber
+
+// condição ? true : false
+```
+
+Geralmente utilizado quando precisamos atribuir um valor para uma variável, dependendo de uma condição
+
+<h4>If Abreviado</h4>
+Não é necessário abrir e fechar as chaves `{}` quando retornamos apenas uma linha de código
+
+```
+var possuiFaculdado = true;
+if(possuiFaculdade) console.log('Possui faculdade');
+else console.log('Não possui faculdade');
+
+// ou
+if(possuiFaculdade)
+    console.log('Possui faculdade');
+else
+    console.log('Não possui faculdade');
+```
+<hr>
+
+<h1>Escopo</h1>
+
+<h4>Escopo de Função</h4>
+
+Variáveis declaradas dentro de funções não são acessadas fora das mesmas.
+
+```
+function mostrarCarro() {
+    var carro = 'Fusca';
+    console.log(carro);
+}
+
+mostrarCarro(); // Fusca no console
+console.log(carro); // Erro, carro is nor defined
+```
+
+Escopo evita o conflito entre nomes.
+
+<h4>Escopo de Função (Pai)</h4>
+
+Variáveis declaradas no escopo pai da função, conseguem ser acessadas pelas funções.
+
+```
+var carro = 'Fusca';
+
+function mostrarCarro() {
+    var frase = `Meu carro é um ${carro}`;
+    console.log(frase);
+}
+
+mostrarCarro(); // Meu carro é um Fusca
+conole.log(carro); // Fusca
+```
+
+<h4>Escopo de Bloco</h4>
+
+Variáveis criadas com `var`, vazam o bloco. Por isso com a introdução do ES6 a melhor forma de declararmos uma variável é utilizando `const` e `let`, pois estas respeitam o escopo do bloco.
+
+```
+if(true) {
+    var carro = 'Fusca';
+    console.log(carro);
+}
+console.log(carro); // Carro
+```
+
+<h4>Var Vaza o Bloco</h4>
+
+Mesmo com a condição falsa, a variável ainda será declarada utilizando hoisting e o valor ficará como `undefined`.
+
+```
+if(false) {
+    var carro = 'Fusca';
+    console.log(carro);
+}
+console.log(carro); // undefined
+```
+
+<h4>Const e Let no lugar de Var</h4>
+
+A partir de agora vamos utilizar apenas const e let para declararmos variáveis.
+
+```
+if(true) {
+    const carro = 'Fusca';
+    console.log(carro);
+}
+console.log(carro); // erro, carro is nor defined
+```
+
+<h4>{} cria um bloco</h4>
+
+Chaves `{}` criam um escopo de bloco, não confundir com a criação de objetos `= {}`
+
+```
+{
+    var carro = 'Fusca';
+    const ano = 2018;
+}
+console.log(carro); // Carro
+console.log(ano); // erro ano is not defined
+```
+
+<h4>For Loop</h4>
+
+Ao utilizar `var` dentro de um `for` loop, que é um bloco, o valor da variável utilizada irá `vazar` e existir fora do loop.
+
+```
+for(var i = 0 < 10; i++) {
+    console.log(`Número ${i}`);
+}
+console.log(i); // 10
+```
+
+<h4>Const</h4>
+
+Mantém o escopo no bloco, impede a redeclaração e impede a modificação do valor da variável, evitando bugs no código.
+
+```
+const mes = 'Dezembro';
+mes = 'Janeiro'; // erro, tentou modificar o valor
+const semana; // erro, declarou sem valor
+
+const data = {
+    dia: 21,
+    mes: 'Dezembro',
+    ano: 2018
+}
+
+data.dia = 09 // Funciona
+data = 'Janeiro'; // erro
+```
+
+<h4>Let</h4>
+
+Mantém o escopo no bloco, impede a redeclaração, mas permite a modificação do valor da variável.
+
+```
+let ano;
+ano = 2018;
+ano++;
+console.log(ano); // 2019
+
+let ano = 2020; // erro, redeclarou a variável
+```
